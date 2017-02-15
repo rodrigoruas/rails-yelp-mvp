@@ -1,2 +1,24 @@
 <h1>Restaurants#index</h1>
 <p>Find me in app/views/restaurants/index.html.erb</p>
+
+
+<div class="container">
+  <h2>Here is your Restaurant List!</h2>
+
+  <% @restaurants.each do |r| %>
+    <div class="row">
+      <div class="col-xm-12 col-md-12 col-lg-12">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <%= "#{r.name}   " %>
+              <div class="buttons">
+                <button type="button"  class="btn btn-outline-success btn-sm"><%= link_to "Details", restaurant_path(r) %></button>
+                <button type="button"  class="btn btn-outline-success btn-sm"><%= link_to "Edit me!", edit_restaurant_path(r) %></button>
+
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <%end%>
+</div>
