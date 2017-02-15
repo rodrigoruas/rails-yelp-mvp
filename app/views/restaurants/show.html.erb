@@ -1,2 +1,34 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xm-12 col-md-12 col-lg-12">
+      <h2><%= "#{@restaurant.name}"%> </h2>
+      <p><%= " Address: #{@restaurant.address} "%> </p>
+      <p><%= " Category: #{@restaurant.category.capitalize} "%> </p>
+       <% @restaurant.reviews.each do |review| %>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <p><%= "#{review.content} "%></p>
+            <p class = "rating"><%= review.rating%></p>
+          </li>
+        </ul>
+      <%end%>
+    </div>
+  </div>
+
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+
+    <div class="card">
+      <div class="card-description">
+        <p><%= f.input :content, as: :text, :input_html => { class: 'test', :cols => 100, :rows => 10 } %></p>
+        <p><%= f.input :rating %></p>
+        <div class="edit-button">
+          <button class="btn  btn-outline-success btn-sm">Add!</button>
+        </div>
+      </div>
+    </div
+
+  <% end %>
+
+
+</div>
