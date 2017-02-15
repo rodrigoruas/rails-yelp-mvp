@@ -1,2 +1,18 @@
 <h1>Reviews#new</h1>
 <p>Find me in app/views/reviews/new.html.erb</p>
+
+<%= simple_form_for [@restaurant, @review] do |f| %>
+
+  <div class="card">
+    <div class="card-description">
+      <p>Content:</p>
+      <p><%= f.text_area(:content, size: '10x5') %></p>
+      <p>Rating</p>
+      <p><%= f.text_area(:rating, size: '10x5') %></p>
+      <div class="edit-button">
+        <button class="btn  btn-outline-success btn-sm">Add!</button>
+      </div>
+    </div>
+  </div
+
+<% end %>
