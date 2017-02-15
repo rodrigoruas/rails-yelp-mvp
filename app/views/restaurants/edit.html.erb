@@ -1,2 +1,20 @@
-<h1>Restaurants#edit</h1>
-<p>Find me in app/views/restaurants/edit.html.erb</p>
+
+<%= form_for(@restaurant) do |f| %>
+
+  <div class="card">
+    <div class="card-description">
+      <p>Name: <%= f.text_field :name %></p>
+      <p>Adress:</p>
+      <p><%= f.text_area(:address, size: '30x5') %></p>
+      <p>Phone Number</p>
+      <p><%= f.text_area(:phone_number, size: '10x5') %></p>
+      <p>Category</p>
+      <p><%= f.text_area(:category, size: '10x5') %></p>
+      <div class="edit-button">
+        <button class="btn  btn-outline-success btn-sm">Add!</button>
+      </div>
+    </div>
+  </div
+
+<% end %>
+
